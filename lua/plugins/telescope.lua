@@ -3,13 +3,12 @@ return {
     tag = "0.1.5",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "nvim-lua/plenary.nvim" 
+        "nvim-lua/plenary.nvim"
     },
-
     config = function()
         require('telescope').setup({})
 
-        local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+        require("lazy.status") -- to configure lazy pending updates count
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = 'Telescope find files' })
         vim.keymap.set('n', '<C-p>', builtin.git_files, {})

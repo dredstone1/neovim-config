@@ -17,3 +17,4 @@ vim.opt.shell = "powershell"
 vim.opt.shellcmdflag = "-Command"
 vim.opt.shellquote = "\""
 vim.opt.shellxquote = " "
+
