@@ -1,5 +1,6 @@
 return {
     'numToStr/Comment.nvim',
+    event = "InsertEnter",
     opts = {
         ---Add a space b/w comment and the line
         padding = true,

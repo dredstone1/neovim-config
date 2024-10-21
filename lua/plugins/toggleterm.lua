@@ -1,7 +1,9 @@
 return {
     'akinsho/toggleterm.nvim',
     version = "*",
-
+    keys = {
+        {[[<c-\>]], '<cmd>ToggleTerm<cr>'}, 
+    },
     config = function()
         require('toggleterm').setup {
             size = function(term)
@@ -34,13 +36,12 @@ return {
             },
 
             winbar = {
-                enabled = false,
+                enabled = true,
                 name_formatter = function(term) --  term: Terminal
                     return term.name
                 end
             }
         }
-
-        --vim.keymap.set({"n", "v", "i", "t"}, "<
-    end
+    end,
 }
+

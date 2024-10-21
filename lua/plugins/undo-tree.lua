@@ -1,13 +1,13 @@
 return {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
+    event = "BufRead",
     keys = {
         { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
     config = function()
-        require('undotree').setup()
         local undotree = require('undotree')
-        
+
         undotree.setup({
             float_diff = true,
             layout = "left_bottom",

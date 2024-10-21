@@ -2,5 +2,5 @@ require("config.remap")
 require("config.set")
 require("config.lazy")
 
-vim.cmd("colorschem Nightfox")
+vim.cmd("colorschem Carbonfox")
 

@@ -10,17 +10,17 @@ return {
         },
         {
             "<leader>xX",
-            "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+            "<cmd>Trouble diagnostics toggle<cr>",
             desc = "Buffer Diagnostics (Trouble)",
         },
         {
             "<leader>cs",
-            "<cmd>Trouble symbols toggle focus=false<cr>",
+            "<cmd>Trouble symbols toggle<cr>",
             desc = "Symbols (Trouble)",
         },
         {
             "<leader>cl",
-            "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+            "<cmd>Trouble lsp toggle<cr>",
             desc = "LSP Definitions / references / ... (Trouble)",
         },
         {
@@ -52,14 +52,10 @@ return {
             warn_no_results = true,  -- show a warning when there are no results
             open_no_results = false, -- open the trouble window when there are no results
             preview = {
-                type = "float",
-                relative = "editor",
-                border = "rounded",
-                title = "Preview",
-                title_pos = "center",
-                position = { 0, -2 },
-                size = { width = 0.3, height = 0.3 },
-                zindex = 200,
+                type = "split",
+                relative = "win",
+                position = "bottom",
+                size = 0.7,
             },
             throttle = {
                 refresh = 20,                            -- fetches new data when needed
@@ -145,24 +141,14 @@ return {
                         include_current = false,
                     },
                 },
-                test = {
-                    mode = "diagnostics",
-                    preview = {
-                        type = "split",
-                        relative = "win",
-                        position = "right",
-                        size = 0.7,
-                    },
-                },
                 -- more advanced example that extends the lsp_document_symbols
                 symbols = {
                     desc = "document symbols",
                     mode = "lsp_document_symbols",
-                    focus = false,
-                    win = { position = "right" },
+                    focus = true,
                     filter = {
                         -- remove Package since luals uses it for control flow structures
-                        ["not"] = { ft = "lua", kind = "Package" },
+                        -- ["not"] = { ft = "lua", kind = "Package" },
                         any = {
                             -- all symbol kinds for help / markdown files
                             ft = { "help", "markdown" },
@@ -231,5 +217,18 @@ return {
                 },
             },
         }
+        local open_with_trouble = require("trouble.sources.telescope").open
+
+
+        local telescope = require("telescope")
+
+        telescope.setup({
+            defaults = {
+                mappings = {
+                    i = { ["<c-t>"] = open_with_trouble },
+                    n = { ["<c-t>"] = open_with_trouble },
+                },
+            },
+        })
     end,
 }

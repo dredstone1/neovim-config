@@ -1,5 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+        "nvim-treesitter/playground", -- playground for treesitter
+    },
+    event = "BufRead",
     build = ":TSUpdate",
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     ensure_installed = {

@@ -9,9 +9,9 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 1
+vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-
+vim.opt.colorcolumn = "80"
 
 vim.opt.shell = "powershell"
 vim.opt.shellcmdflag = "-Command"
