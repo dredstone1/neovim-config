@@ -6,17 +6,26 @@ return {
         'zbirenbaum/copilot-cmp',
         'hrsh7th/cmp-path',
         'rafamadriz/friendly-snippets',
-        'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
+        "L3MON4D3/LuaSnip",
         'neovim/nvim-lspconfig',
     },
-
     cmd = "CmpStatus",
-    event = "InsertEnter",
+    lazy = true,
+    event = "BufRead",
     config = function()
+        require("lspconfig")
+        require('copilot')
+        require("copilot_cmp").setup()
         local cmp = require("cmp")
-        local lsp = require("lspconfig")
         cmp.setup({
+            sources = {
+                { name = 'copilot' },
+                { name = 'path' },
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+                { name = 'buffer' },
+            },
             snippet = {
                 expand = function(args)
                     require("luasnip").lsp_expand(args.body)
@@ -27,22 +36,12 @@ return {
                 ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 ['<CR>'] = cmp.mapping.confirm({ select = false }),
             }),
-            sources = {
-                { name = "copilot" },
-                { name = "luasnip" },
-                { name = "path" },
-                { name = "nvim_lsp" },
-                { name = "buffer" },
-            },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
         })
-        require('copilot')
-        require("copilot_cmp").setup()
-        lsp.clangd.setup {
-            capabilities = require("cmp_nvim_lsp").default_capabilities()
-        }
+
+        require("luasnip.loaders.from_vscode").lazy_load()
     end,
 }

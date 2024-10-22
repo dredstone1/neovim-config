@@ -1,6 +1,3 @@
-require("config.remap")
-require("config.set")
+require("config.keymap")
+require("config.settings")
 require("config.lazy")
-
-vim.cmd("colorschem Carbonfox")
-

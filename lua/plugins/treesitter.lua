@@ -1,11 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
-        "nvim-treesitter/playground", -- playground for treesitter
+        "nvim-treesitter/playground",
     },
     event = "BufRead",
     build = ":TSUpdate",
-    -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+    lazy = true,
     ensure_installed = {
         "c",
         "cpp",
@@ -39,6 +39,6 @@ return {
 
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true,
     },
 }

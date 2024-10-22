@@ -2,6 +2,7 @@ return {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
     event = "BufRead",
+    lazy = true,
     keys = {
         { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
