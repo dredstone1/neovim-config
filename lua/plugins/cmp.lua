@@ -12,7 +12,7 @@ return {
     },
     cmd = "CmpStatus",
     lazy = true,
-    event = "BufRead",
+    event = "InsertEnter",
     config = function()
         require("lspconfig")
         require('copilot')

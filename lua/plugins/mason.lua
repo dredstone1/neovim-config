@@ -14,7 +14,6 @@ return {
                 "lua_ls",
                 "pyright",
                 "ruff",
-                "stylua"
             },
             automatic_installation = true,
             handlers = {
