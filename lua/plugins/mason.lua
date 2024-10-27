@@ -5,6 +5,7 @@ return {
     event = "BufRead",
     dependencies = {
         'williamboman/mason-lspconfig.nvim',
+        "j-hui/fidget.nvim",
     },
     config = function()
         require('mason').setup({})

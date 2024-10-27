@@ -6,6 +6,4 @@ return {
     cmd = {
         "Git",
     },
-    config = function()
-    end
 }

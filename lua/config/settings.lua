@@ -23,3 +23,8 @@ vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 1
 vim.g.netrw_hide = 0
 vim.g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.undodir = os.getenv('HOMEPATH') .. '/.nvim/undodir'
+vim.opt.undofile = true

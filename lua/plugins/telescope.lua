@@ -9,7 +9,7 @@ return {
         { '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>' },
         { '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
         { '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>' },
-        { '<leader>fn', '<cmd>lua require("telescope.builtin").help_tags()<cr>' },
+        { '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>' },
         { '<leader>fq', '<cmd>Telescope persisted<cr>'},
     },
     config = function()
