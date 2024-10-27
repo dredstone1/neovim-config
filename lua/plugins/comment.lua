@@ -1,7 +1,15 @@
 return {
     'numToStr/Comment.nvim',
-    event = "InsertEnter",
     lazy = true,
+    keys = {
+        {"gcc"},
+        {"gbc"},
+        {"gc"},
+        {"gb"},
+        {"gcO"},
+        {"gco"},
+        {"gcA"},
+    },
     opts = {
         ---Add a space b/w comment and the line
         padding = true,
@@ -33,7 +41,6 @@ return {
             eol = 'gcA',
         },
         ---Enable keybindings
-        ---NOTE: If given `false` then the plugin won't create any mappings
         mappings = {
             ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
             basic = true,

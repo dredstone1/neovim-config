@@ -4,11 +4,19 @@ return {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'zbirenbaum/copilot-cmp',
+        'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-path',
         'rafamadriz/friendly-snippets',
-        'saadparwaiz1/cmp_luasnip',
-        "L3MON4D3/LuaSnip",
+        'hrsh7th/cmp-emoji',
+        {
+            "L3MON4D3/LuaSnip",
+            -- follow latest release.
+            version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+            -- install jsregexp (optional!).
+            build = "make install_jsregexp"
+        },
         'neovim/nvim-lspconfig',
+        'saadparwaiz1/cmp_luasnip',
     },
     cmd = "CmpStatus",
     lazy = true,
@@ -20,11 +28,12 @@ return {
         local cmp = require("cmp")
         cmp.setup({
             sources = {
+                { name = 'luasnip', option = { show_autosnippets = true } },
                 { name = 'copilot' },
                 { name = 'path' },
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' },
                 { name = 'buffer' },
+                { name = 'emoji' },
             },
             snippet = {
                 expand = function(args)

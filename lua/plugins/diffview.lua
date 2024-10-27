@@ -8,7 +8,6 @@ return {
     },
     config = function()
         require("diffview.actions")
-        require("diffview").setup({
-        })
+        require("diffview").setup()
     end,
 }

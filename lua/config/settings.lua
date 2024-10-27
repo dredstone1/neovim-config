@@ -18,3 +18,8 @@ vim.opt.shellcmdflag = "-Command"
 vim.opt.shellquote = "\""
 vim.opt.shellxquote = " "
 
+vim.g.netrw_winsize = 20
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 1
+vim.g.netrw_hide = 0
+vim.g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro'

@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]])
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]])
-vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) 
+vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]])
 vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]])
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
