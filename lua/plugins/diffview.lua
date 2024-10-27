@@ -7,7 +7,6 @@ return {
         "DiffviewOpen",
     },
     config = function()
-        require("diffview.actions")
         require("diffview").setup()
     end,
 }

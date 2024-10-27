@@ -1,7 +1,7 @@
 return {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
-     event = "BufRead",
+    event = "BufRead",
     lazy = true,
     keys = {
         { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
@@ -13,7 +13,15 @@ return {
             float_diff = true,
             layout = "left_bottom",
             position = "left",
-            ignore_filetype = { 'undotree', 'undotreeDiff', 'qf', 'TelescopePrompt', 'spectre_panel', 'tsplayground' },
+            ignore_filetype = {
+                'undotree',
+                'undotreeDiff',
+                'qf',
+                'TelescopePrompt',
+                'spectre_panel',
+                'tsplayground',
+                'toggleterm',
+            },
             window = {
                 winblend = 30,
             },
@@ -28,6 +36,5 @@ return {
                 ['q'] = "quit",
             },
         })
-
     end
 }

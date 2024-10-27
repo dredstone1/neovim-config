@@ -8,41 +8,17 @@ return {
     config = function()
         require('toggleterm').setup {
             highlights = require("rose-pine.plugins.toggleterm"),
-            size = function(term)
-                if term.direction == "horizontal" then
-                    return 15
-                elseif term.direction == "vertical" then
-                    return vim.o.columns * 0.4
-                end
-            end,
+            size = 20,
             open_mapping = [[<C-\>]],
-
-            hide_numbers = false,  -- hide the number column in toggleterm buffers
-            autochdir = true,      -- when neovim changes it current directory the terminal will change it's own when next it's opened
+            hide_numbers = false,
+            autochdir = true,
             start_in_insert = true,
-            persist_mode = true,   -- when the term is closed it will not lose its state
-            shell = vim.o.shell,   -- change the default shell
-            close_on_exit = false, -- close the terminal window when the process exits
-
-            auto_scroll = true,    -- auto scroll when new output is generated
-
-            shade_terminals = true,
-
+            persist_mode = true,
+            shell = vim.o.shell,
+            close_on_exit = false,
+            auto_scroll = true,
             persist_size = true,
             direction = 'horizontal',
-            float_opts = {
-                border = 'single',
-                width = 150,
-                height = 40,
-                winblend = 3,
-            },
-
-            winbar = {
-                enabled = true,
-                name_formatter = function(term) --  term: Terminal
-                    return term.name
-                end
-            }
         }
         function _G.set_terminal_keymaps()
             local opts = { buffer = 0 }
@@ -55,7 +31,6 @@ return {
             vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
         end
 
-        -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-        vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+        vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
     end,
 }
