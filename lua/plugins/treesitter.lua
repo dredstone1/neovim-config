@@ -21,7 +21,7 @@ return {
                 "javascript",
                 "python",
                 "rust",
-                "comment",
+                "java",
             },
             highlight = {
                 enable = true,

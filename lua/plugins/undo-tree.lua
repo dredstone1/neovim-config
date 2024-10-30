@@ -19,8 +19,7 @@ return {
                 'qf',
                 'TelescopePrompt',
                 'spectre_panel',
-                'tsplayground',
-                'toggleterm',
+                'tsplayground'
             },
             window = {
                 winblend = 30,

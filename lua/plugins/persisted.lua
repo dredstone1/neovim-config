@@ -31,7 +31,7 @@ return {
         vim.api.nvim_create_autocmd("User", {
             pattern = "PersistedSavePre",
             callback = function()
-                local buffer_types_to_delete = { "toggleterm", "undotree" }
+                local buffer_types_to_delete = { "undotree" }
 
                 local function contains(table, val)
                     for _, value in ipairs(table) do

@@ -13,6 +13,19 @@ return {
         { '<leader>fq', '<cmd>Telescope persisted<cr>' },
     },
     config = function()
-        require('telescope').setup()
+        local actions = require('telescope.actions')
+        require('telescope').setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<c-d>"] = actions.delete_buffer,
+                    },
+                    n = {
+                        ["<c-d>"] = actions.delete_buffer,
+                        ["dd"] = actions.delete_buffer,
+                    },
+                },
+            },
+        })
     end,
 }

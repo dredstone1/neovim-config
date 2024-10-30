@@ -120,7 +120,7 @@ return {
     end,
     keys = {
         {
-            "<leader>fc",
+            "<leader>ap",
             function()
                 local actions = require("CopilotChat.actions")
                 require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())

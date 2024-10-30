@@ -1,25 +1,39 @@
--- remap some keys to make it easier to use
+function Map(mode, lhs, rhs, opts)
+    local options = { noremap = true, silent = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.keymap.set(mode, lhs, rhs, options)
+end
+
 vim.g.mapleader = " "
 
--- return to the file explorer
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+Map("n", "<leader>e", vim.cmd.Ex)
 
--- spliting windows
--- space + c + b -> horizontal split
--- space + c + c -> close window
-vim.keymap.set("n", "<leader>cv", vim.cmd.vsplit)
-vim.keymap.set("n", "<leader>cb", vim.cmd.split)
-vim.keymap.set("n", "<leader>cc", vim.cmd.close)
+Map("n", "<leader>cv", vim.cmd.vsplit)
+Map("n", "<leader>cb", vim.cmd.split)
+Map("n", "<leader>cc", vim.cmd.close)
 
--- git
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+Map("n", "<leader>gs", vim.cmd.Git)
 
-vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]])
-vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]])
-vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]])
-vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]])
+Map("n", "=", "<cmd>vertical resize +5<cr>")
+Map("t", "=", "<cmd>vertical resize +5<cr>")
+Map("n", "-", "<cmd>vertical resize -5<cr>")
+Map("t", "-", "<cmd>vertical resize -5<cr>")
+Map("n", "+", "<cmd>horizontal resize +2<cr>")
+Map("t", "+", "<cmd>horizontal resize +2<cr>")
+Map("n", "_", "<cmd>horizontal resize -2<cr>")
+Map("t", "_", "<cmd>horizontal resize -2<cr>")
 
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
+Map("n", "<C-h>", "<cmd>wincmd h<CR>")
+Map("n", "<C-j>", "<cmd>wincmd j<CR>")
+Map("n", "<C-k>", "<cmd>wincmd k<CR>")
+Map("n", "<C-l>", "<cmd>wincmd l<CR>")
+
+-- terminal
+Map("t", "<C-h>", "<cmd>wincmd h<CR>")
+Map("t", "<C-j>", "<cmd>wincmd j<CR>")
+Map("t", "<C-k>", "<cmd>wincmd k<CR>")
+Map("t", "<C-l>", "<cmd>wincmd l<CR>")
+
+Map("n", "<leader>tt", "<cmd>terminal<CR>")
