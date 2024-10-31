@@ -19,24 +19,22 @@ return {
         require("lspconfig")
         require('copilot')
         require("copilot_cmp").setup()
+
         local cmp = require("cmp")
         cmp.setup({
-            sources = {
-                { name = 'luasnip', option = { show_autosnippets = true } },
-                { name = 'copilot' },
-                { name = 'path' },
-                { name = 'nvim_lsp' },
-                { name = 'buffer' },
-                { name = 'emoji' },
-            },
             snippet = {
                 expand = function(args)
                     require("luasnip").lsp_expand(args.body)
                 end,
             },
+            sources = {
+                { name = 'luasnip' },
+                { name = 'copilot' },
+                { name = 'path' },
+                { name = 'nvim_lsp' },
+                { name = 'buffer' },
+            },
             mapping = cmp.mapping.preset.insert({
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 ['<CR>'] = cmp.mapping.confirm({ select = false }),
             }),
             window = {

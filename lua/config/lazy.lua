@@ -17,10 +17,6 @@ require("lazy").setup(
         { import = "lang" },
     },
     {
-        checker = {
-            enabled = true,
-            notify = false,
-        },
         change_detection = {
             notify = false,
         },

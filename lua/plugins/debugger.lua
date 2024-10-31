@@ -8,7 +8,6 @@ return {
         "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text",
     },
-    opts = {},
     keys = {
         { "<leader>dt", "<cmd>DapToggleBreakpoint<cr>",           mode = { "n", "v" } },
         { "<leader>dc", function() require("dap").continue() end, mode = { "n", "v" } },

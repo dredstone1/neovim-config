@@ -4,10 +4,8 @@ return {
     cmd = { "DapInstall", "DapUninstall" },
     lazy = true,
     opts = {
-        automatic_installation = true,
-
-        handlers = {},
-
+        automatic_installation = false,
+        handlers = nil,
         ensure_installed = {
             "debugpy",
         },

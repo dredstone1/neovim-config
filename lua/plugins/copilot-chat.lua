@@ -48,9 +48,6 @@ return {
                 normal = "<C-y>",
                 insert = "<C-y>",
             },
-            yank_diff = {
-                normal = "gmy",
-            },
             show_diff = {
                 normal = "gmd",
             },
@@ -61,7 +58,7 @@ return {
                 normal = "gms",
             },
             show_help = {
-                normal = "gmh",
+                normal = "g?",
             },
         },
     },
