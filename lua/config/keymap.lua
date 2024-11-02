@@ -21,11 +21,6 @@ Map("n", "-", "<cmd>vertical resize -5<cr>")
 Map("n", "+", "<cmd>horizontal resize +2<cr>")
 Map("n", "_", "<cmd>horizontal resize -2<cr>")
 
-Map("t", "=", "<cmd>vertical resize +5<cr>")
-Map("t", "-", "<cmd>vertical resize -5<cr>")
-Map("t", "+", "<cmd>horizontal resize +2<cr>")
-Map("t", "_", "<cmd>horizontal resize -2<cr>")
-
 Map("n", "<C-h>", "<cmd>wincmd h<CR>")
 Map("n", "<C-j>", "<cmd>wincmd j<CR>")
 Map("n", "<C-k>", "<cmd>wincmd k<CR>")

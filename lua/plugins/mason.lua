@@ -14,6 +14,9 @@ return {
                 "lua_ls",
                 "pyright",
                 "ruff",
+                "html",
+                "cssls",
+                "jsonls",
             },
             automatic_installation = true,
             handlers = {

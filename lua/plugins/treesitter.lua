@@ -9,6 +9,7 @@ return {
             auto_install = true,
             ensure_installed = {
                 "c",
+                "markdown",
                 "cpp",
                 "lua",
                 "json",
