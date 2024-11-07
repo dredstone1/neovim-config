@@ -5,11 +5,9 @@ return {
     config = function()
         local lualine = require("lualine")
         lualine.setup({
-            theme = 'rose-pine',
+            theme = 'catppuccin',
             options = {
                 icons_enabled = true,
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
                 always_divide_middle = true,
                 refresh = {
                     statusline = 1000,

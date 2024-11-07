@@ -55,6 +55,7 @@ return {
                                 "Module",
                                 "Namespace",
                                 "Package",
+
                                 "Property",
                                 "Struct",
                                 "Trait",
