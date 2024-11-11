@@ -19,6 +19,7 @@ return {
                 "python",
                 "rust",
                 "java",
+                "bash",
             },
             highlight = {
                 enable = true,

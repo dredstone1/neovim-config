@@ -13,7 +13,6 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "pyright",
-                "ruff",
                 "html",
                 "cssls",
                 "jsonls",
@@ -25,5 +24,5 @@ return {
                 end,
             }
         })
-    end
+    end,
 }
