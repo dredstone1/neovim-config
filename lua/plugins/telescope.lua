@@ -10,7 +10,6 @@ return {
         { '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
         { '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>' },
         { '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>' },
-        { '<leader>fq', '<cmd>Telescope persisted<cr>' },
     },
     config = function()
         local actions = require('telescope.actions')

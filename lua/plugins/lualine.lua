@@ -9,9 +9,6 @@ return {
             options = {
                 icons_enabled = true,
                 always_divide_middle = true,
-                refresh = {
-                    statusline = 1000,
-                }
             },
 
             sections = {

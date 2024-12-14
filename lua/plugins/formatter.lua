@@ -4,6 +4,10 @@ return {
 	config = function()
 		local util = require("formatter.util")
 		require("formatter").setup({
+			-- Enable or disable logging
+			logging = false,
+			-- Set the log level
+			-- All formatter configurations are opt-in
 			filetype = {
 				cpp = {
 					function()
@@ -48,10 +52,16 @@ return {
 				},
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
-					require("formatter.filetypes.any").substitute_trailing_whitespace,
+					function()
+						-- Ignore already configured types.
+						local defined_types = require("formatter.config").values.filetype
+						if defined_types[vim.bo.filetype] ~= nil then
+							return nil
+						end
+						vim.lsp.buf.format({ async = true })
+					end,
 				},
 			},
 		})
 	end,
 }
-

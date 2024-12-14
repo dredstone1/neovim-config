@@ -7,7 +7,6 @@ return {
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-path',
         'rafamadriz/friendly-snippets',
-        'hrsh7th/cmp-emoji',
         "L3MON4D3/LuaSnip",
         'neovim/nvim-lspconfig',
         'saadparwaiz1/cmp_luasnip',
@@ -28,8 +27,8 @@ return {
                 end,
             },
             sources = {
-                { name = 'luasnip' },
                 { name = 'copilot' },
+                { name = 'luasnip' },
                 { name = 'path' },
                 { name = 'nvim_lsp' },
                 { name = 'buffer' },
