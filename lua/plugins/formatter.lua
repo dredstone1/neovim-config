@@ -6,8 +6,6 @@ return {
 		require("formatter").setup({
             			-- Enable or disable logging
 			logging = false,
-			-- Set the log level
-			-- All formatter configurations are opt-in
 			filetype = {
 				cpp = {
 					function()
