@@ -15,7 +15,7 @@ return {
 								"-style=file",
 								util.escape_path(util.get_current_buffer_file_path()),
 								"-i",
-								'--style="{BasedOnStyle: llvm, IndentWidth: 4}"',
+								'--style="{BasedOnStyle: llvm, IndentWidth: 4, ColumnLimit: 0}"',
 							},
 						}
 					end,
