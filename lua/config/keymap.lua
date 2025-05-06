@@ -1,36 +1,49 @@
 function Map(mode, lhs, rhs, opts)
-    local options = { noremap = true, silent = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.keymap.set(mode, lhs, rhs, options)
+	local options = { noremap = true, silent = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.keymap.set(mode, lhs, rhs, options)
 end
 
 vim.g.mapleader = " "
 
-Map("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set({ "n", "v" }, "<C-m>", function()
+	vim.cmd("normal %")
+end, { noremap = true, silent = true })
+
+-- better backwords shortcut
+Map("n", "<leader>e", function()
+	if vim.bo.filetype == "netrw" then
+		vim.cmd("normal u")
+	else
+		vim.cmd("silent Explore " .. vim.fn.expand("%:p:h"))
+	end
+end)
+
+-- Git command using the Map function
 Map("n", "<leader>gs", vim.cmd.Git)
 
+-- Window management
 Map("n", "<leader>cv", vim.cmd.vsplit)
 Map("n", "<leader>cb", vim.cmd.split)
 Map("n", "<leader>cc", vim.cmd.close)
 Map("n", "<leader>td", vim.cmd.tabclose)
 
-vim.api.nvim_create_autocmd('LspAttach', {
-    desc = 'LSP actions',
-    callback = function(event)
-        local opts = { buffer = event.buf }
+-- LSP-related keymaps
+vim.api.nvim_create_autocmd("LspAttach", {
+	desc = "LSP actions",
+	callback = function(event)
+		local opts = { buffer = event.buf }
 
-        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-        vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-        vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-        vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>Format<cr>', opts)
-        vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    end
+		Map("n", "K", vim.lsp.buf.hover, opts)
+		Map("n", "gd", vim.lsp.buf.definition, opts)
+		Map("n", "gD", vim.lsp.buf.declaration, opts)
+		Map("n", "gi", vim.lsp.buf.implementation, opts)
+		Map("n", "go", vim.lsp.buf.type_definition, opts)
+		Map("n", "gr", vim.lsp.buf.references, opts)
+		Map("n", "gs", vim.lsp.buf.signature_help, opts)
+		Map("n", "<F2>", vim.lsp.buf.rename, opts)
+		Map("n", "<F4>", vim.lsp.buf.code_action, opts)
+	end,
 })
-

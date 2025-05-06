@@ -1,66 +1,39 @@
 return {
-	"mhartington/formatter.nvim",
-	lazy = false,
+	"stevearc/conform.nvim",
+	lazy = true,
+	event = { "BufWritePre" },
+	cmd = { "ConformInfo", "Format" },
+	keys = {
+		{
+			"<f3>",
+			function()
+				require("conform").format({ async = true })
+			end,
+			mode = "",
+			desc = "Format buffer",
+		},
+	},
 	config = function()
-		local util = require("formatter.util")
-		require("formatter").setup({
-            			-- Enable or disable logging
-			logging = false,
-			filetype = {
-				cpp = {
-					function()
-						return {
-							exe = "clang-format",
-							args = {
-								"-style=file",
-								util.escape_path(util.get_current_buffer_file_path()),
-								"-i",
-								'--style="{BasedOnStyle: llvm, IndentWidth: 4, ColumnLimit: 0}"',
-							},
-						}
-					end,
-				},
-				c = {
-					function()
-						return {
-							exe = "clang-format",
-							args = {
-								"-style=file",
-								util.escape_path(util.get_current_buffer_file_path()),
-								"-i",
-								'--style="{BasedOnStyle: llvm, IndentWidth: 4}"',
-							},
-						}
-					end,
-				},
-				lua = {
-					function()
-						return {
-							exe = "stylua",
-							args = {
-								"--search-parent-directories",
-								"--stdin-filepath",
-								util.escape_path(util.get_current_buffer_file_path()),
-								"--",
-								"-",
-							},
-							stdin = true,
-						}
-					end,
-				},
-				["*"] = {
-					require("formatter.filetypes.any").remove_trailing_whitespace,
-					require("formatter.filetypes.any").substitute_trailing_whitespace,
-					function()
-						-- Ignore already configured types.
-						local defined_types = require("formatter.config").values.filetype
-						if defined_types[vim.bo.filetype] ~= nil then
-							return nil
-						end
-						vim.lsp.buf.format({ async = true })
-					end,
-				},
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "isort", "black" },
+				rust = { "rustfmt", lsp_format = "fallback" },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
 			},
+			format_on_save = false,
 		})
+
+		vim.api.nvim_create_user_command("Format", function(args)
+			local range = nil
+			if args.count ~= -1 then
+				local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+				range = {
+					start = { args.line1, 0 },
+					["end"] = { args.line2, end_line:len() },
+				}
+			end
+			require("conform").format({ async = true, lsp_format = "fallback", range = range })
+		end, { range = true })
 	end,
 }
