@@ -12,15 +12,11 @@ return {
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"lua_ls",
-				"stylua",
 				"pyright",
 				"html",
 				"cssls",
 				"jsonls",
-				"clang-format",
 				"clangd",
-				"cmakelang",
-				"cmake-language-server",
 			},
 			automatic_installation = true,
 			handlers = {

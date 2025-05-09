@@ -30,3 +30,5 @@ end
 
 vim.opt.undodir = undodir_path
 vim.opt.undofile = true
+
+vim.diagnostic.config({ virtual_text = true })

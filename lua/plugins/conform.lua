@@ -14,9 +14,15 @@ return {
 		},
 	},
 	config = function()
-		require("conform").setup({
+		local conform = require("conform")
+
+		conform.setup({
 			formatters_by_ft = {
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
 				lua = { "stylua" },
+				markdown = { "prettier" },
 				python = { "isort", "black" },
 				rust = { "rustfmt", lsp_format = "fallback" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
