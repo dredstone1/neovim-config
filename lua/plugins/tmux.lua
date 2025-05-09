@@ -1,5 +1,16 @@
 return {
 	"aserowy/tmux.nvim",
+	lazy = true,
+	keys = {
+		{ "<C-l>" },
+		{ "<C-k>" },
+		{ "<C-j>" },
+		{ "<C-h>" },
+		{ "<A-l>" },
+		{ "<A-k>" },
+		{ "<A-j>" },
+		{ "<A-h>" },
+	},
 	config = function()
 		return require("tmux").setup({
 			copy_sync = {

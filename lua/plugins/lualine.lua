@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	lazy = true,
-	event = "ColorScheme",
+	lazy = false,
+	priority = 900,
 	config = function()
 		local lualine = require("lualine")
 		lualine.setup({
@@ -10,7 +10,6 @@ return {
 				icons_enabled = true,
 				always_divide_middle = true,
 			},
-
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = {

@@ -29,7 +29,6 @@ return {
 			desc = "Quickfix List (Trouble)",
 		},
 	},
-
 	config = function()
 		require("trouble").setup({
 			auto_preview = true,
@@ -55,7 +54,6 @@ return {
 								"Module",
 								"Namespace",
 								"Package",
-
 								"Property",
 								"Struct",
 								"Trait",

@@ -30,20 +30,3 @@ Map("n", "<leader>cb", vim.cmd.split)
 Map("n", "<leader>cc", vim.cmd.close)
 Map("n", "<leader>td", vim.cmd.tabclose)
 
--- LSP-related keymaps
-vim.api.nvim_create_autocmd("LspAttach", {
-	desc = "LSP actions",
-	callback = function(event)
-		local opts = { buffer = event.buf }
-
-		Map("n", "K", vim.lsp.buf.hover, opts)
-		Map("n", "gd", vim.lsp.buf.definition, opts)
-		Map("n", "gD", vim.lsp.buf.declaration, opts)
-		Map("n", "gi", vim.lsp.buf.implementation, opts)
-		Map("n", "go", vim.lsp.buf.type_definition, opts)
-		Map("n", "gr", vim.lsp.buf.references, opts)
-		Map("n", "gs", vim.lsp.buf.signature_help, opts)
-		Map("n", "<F2>", vim.lsp.buf.rename, opts)
-		Map("n", "<F4>", vim.lsp.buf.code_action, opts)
-	end,
-})
