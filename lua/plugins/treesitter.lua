@@ -20,8 +20,6 @@ return {
 				"rust",
 				"java",
 				"bash",
-				"clang-format",
-				"clangd",
 			},
 			highlight = {
 				enable = true,
