@@ -29,4 +29,3 @@ Map("n", "<leader>cv", vim.cmd.vsplit)
 Map("n", "<leader>cb", vim.cmd.split)
 Map("n", "<leader>cc", vim.cmd.close)
 Map("n", "<leader>td", vim.cmd.tabclose)
-
