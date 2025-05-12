@@ -10,6 +10,9 @@ return {
 		{ "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>' },
 		{ "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>' },
 		{ "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>' },
+		{ "<leader>fsb", '<cmd>lua require("telescope.builtin").git_branches()<cr>' },
+		{ "<leader>fss", '<cmd>lua require("telescope.builtin").git_status()<cr>' },
+		{ "<leader>fc", '<cmd>lua require("telescope.builtin").colorscheme()<cr>' },
 	},
 	config = function()
 		local actions = require("telescope.actions")

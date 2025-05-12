@@ -30,7 +30,7 @@ return {
 				},
 				documentation = { auto_show = true },
 			},
-            signature = { enabled = true },
+			signature = { enabled = true },
 			sources = {
 				default = {
 					"lsp",

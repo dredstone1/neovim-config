@@ -1,8 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "j-hui/fidget.nvim", opts = {} },
-		{ "williamboman/mason.nvim", opts = {} },
+		{ "mason-org/mason.nvim", opts = {} },
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"saghen/blink.cmp",
@@ -24,7 +23,6 @@ return {
 				map("grd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 				map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
-				map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 				map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
 			end,
 		})
@@ -41,7 +39,7 @@ return {
 				"stylua",
 				"pyright",
 				"html",
-                "prettier",
+				"prettier",
 				"cssls",
 				"jsonls",
 				"clangd",
