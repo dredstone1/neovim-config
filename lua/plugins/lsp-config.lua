@@ -6,8 +6,8 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"saghen/blink.cmp",
 	},
-	lazy = true,
-	event = "BufRead",
+	lazy = false,
+	event = "BufReadPre",
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
@@ -16,14 +16,14 @@ return {
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
 
-				map("grn", vim.lsp.buf.rename, "[R]e[n]ame")
-				map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
-				map("grr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-				map("gri", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-				map("grd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-				map("grD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+				map("K", vim.lsp.buf.hover, "Hover Documentation")
+				map("gn", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+				map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 				map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
-				map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
+				map("gt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
 			end,
 		})
 
@@ -32,6 +32,10 @@ return {
 		local servers = {
 			lua_ls = {},
 			pyright = {},
+			html = {},
+			cssls = {},
+			jsonls = {},
+			clangd = {},
 		}
 
 		require("mason-tool-installer").setup({
@@ -47,8 +51,9 @@ return {
 		})
 
 		require("mason-lspconfig").setup({
+			automatic_enable = true,
 			ensure_installed = {},
-			automatic_installation = false,
+			automatic_installation = true,
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}

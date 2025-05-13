@@ -3,7 +3,7 @@ return {
 	dependencies = { "rafamadriz/friendly-snippets" },
 	version = "1.*",
 	lazy = true,
-	event = "BufRead",
+	event = "BufReadPre",
 	config = function()
 		local blink = require("blink.cmp")
 		blink.setup({
