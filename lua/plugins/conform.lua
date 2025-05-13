@@ -8,7 +8,7 @@ return {
 			function()
 				require("conform").format({ async = true })
 			end,
-			mode = "",
+			mode = "n",
 			desc = "Format buffer",
 		},
 	},
@@ -25,8 +25,47 @@ return {
 				python = { "isort", "black" },
 				rust = { "rustfmt", lsp_format = "fallback" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
+				cpp = { "clang-format" },
+				c = { "clang-format" },
+				["*"] = { "codespell" },
+				["_"] = { "trim_whitespace" },
 			},
 			format_on_save = false,
+			formatters = {
+				prettier = {
+					prepend_args = {
+						"--use-tabs",
+						"--tab-width",
+						"4",
+					},
+				},
+				prettierd = {
+					prepend_args = {
+						"--use-tabs",
+						"--tab-width",
+						"4",
+					},
+				},
+				stylua = {
+					prepend_args = {
+						"--indent-type",
+						"Tabs",
+						"--indent-width",
+						"4",
+					},
+				},
+				rustfmt = {
+					prepend_args = {
+						"--config",
+						"hard_tabs=true,tab_spaces=4",
+					},
+				},
+				["clang-format"] = {
+					prepend_args = {
+						"-style={UseTab: ForIndentation, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
+					},
+				},
+			},
 		})
 
 		vim.api.nvim_create_user_command("Format", function(args)

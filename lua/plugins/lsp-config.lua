@@ -47,6 +47,7 @@ return {
 				"cssls",
 				"jsonls",
 				"clangd",
+				"clang-format",
 			},
 		})
 
