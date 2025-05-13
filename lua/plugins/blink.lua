@@ -10,13 +10,13 @@ return {
 			keymap = {
 				preset = "default",
 
-				["<C-q>"] = { "accept" },
+				["<A-q>"] = { "accept" },
 				["<Up>"] = { "select_prev", "fallback" },
 				["<Down>"] = { "select_next", "fallback" },
 				["<C-e>"] = { "hide", "fallback" },
 				["<C-space>"] = { "show", "fallback" },
-				["<C-n>"] = { "select_next" },
-				["<C-p>"] = { "select_prev" },
+				["<A-n>"] = { "select_next" },
+				["<A-p>"] = { "select_prev" },
 			},
 			appearance = {
 				nerd_font_variant = "mono",
