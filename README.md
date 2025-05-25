@@ -95,6 +95,7 @@ A modern, feature-rich Neovim configuration built with Lua, designed for efficie
 - **[vim-fugitive](https://github.com/tpope/vim-fugitive)** - Git wrapper
 
 ### UI & Visual
+- **[vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)** - Color theme
 - **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)** - Statusline (moonfly theme)
 - **[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)** - Markdown rendering
 
