@@ -4,7 +4,7 @@ A modern, feature-rich Neovim configuration built with Lua, designed for efficie
 
 ## 📸 Screenshots
 
-*minimal and simple as well as beautiful theme thanks to [moonfly](https://github.com/bluz71/vim-moonfly-colors)*
+*Minimal and simple as well as beautiful theme thanks to [moonfly](https://github.com/bluz71/vim-moonfly-colors)*
 ![Neovim editor](images/screenshot1.png)
 
 ## ✨ Features
