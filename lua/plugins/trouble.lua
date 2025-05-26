@@ -5,11 +5,14 @@ return {
 	keys = {
 		{
 			"<leader>xx",
-			"<cmd>Trouble diagnostics togglecr>",
+			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Diagnostics (Trouble)",
 		},
 	},
 	config = function()
-		require("trouble").setup({})
+		require("trouble").setup({
+			auto_close = true,
+			warn_no_results = false,
+		})
 	end,
 }
