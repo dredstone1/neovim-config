@@ -6,7 +6,7 @@ return {
 	cmd = {
 		"DiffviewOpen",
 	},
-    lazy = true,
+	lazy = true,
 	config = function()
 		require("diffview").setup()
 	end,
