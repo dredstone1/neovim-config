@@ -10,7 +10,6 @@ vim.opt.expandtab = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.wrap = false
 vim.opt.scrolloff = 8
 
 vim.g.netrw_winsize = 20
