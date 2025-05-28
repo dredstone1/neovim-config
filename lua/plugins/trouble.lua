@@ -13,6 +13,7 @@ return {
 		require("trouble").setup({
 			auto_close = true,
 			warn_no_results = false,
+			focus = true,
 		})
 	end,
 }
