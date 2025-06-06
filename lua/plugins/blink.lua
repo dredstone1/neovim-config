@@ -2,6 +2,7 @@ return {
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
 	lazy = true,
+	version = "1.*",
 	event = "BufReadPre",
 	config = function()
 		local blink = require("blink.cmp")
