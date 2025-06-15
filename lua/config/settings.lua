@@ -23,6 +23,8 @@ vim.opt.updatetime = 50
 vim.opt.backup = false
 vim.opt.swapfile = false
 
+vim.opt.colorcolumn = "80"
+
 local undodir_path = vim.fn.stdpath("data") .. "/undodir"
 
 if vim.fn.isdirectory(undodir_path) == 0 then
