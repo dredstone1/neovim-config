@@ -18,6 +18,7 @@ return {
 
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
 				map("gn", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("gk", vim.lsp.buf.code_action, "[R]e[n]ame")
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")

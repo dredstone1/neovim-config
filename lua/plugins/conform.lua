@@ -62,7 +62,7 @@ return {
 				},
 				["clang-format"] = {
 					prepend_args = {
-						"-style={UseTab: ForIndentation, IndentWidth: 4, TabWidth: 4, ColumnLimit: 0}",
+						"-style={UseTab: ForIndentation,IndentWidth: 4,TabWidth: 4,ColumnLimit: 0}",
 					},
 				},
 			},
