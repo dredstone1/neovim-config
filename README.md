@@ -14,7 +14,6 @@ A modern, feature-rich Neovim configuration built with Lua, designed for efficie
 - **Intelligent Code Completion**: Powered by [blink.cmp](https://github.com/saghen/blink.cmp)
 - **Advanced Syntax Highlighting**: Tree-sitter integration with support for 12+ languages
 - **Fuzzy Finding**: Telescope integration for file searching, live grep, and more
-- **Debugging Support**: Built-in DAP (Debug Adapter Protocol) integration
 - **Git Integration**: GitSigns, Diffview, and Fugitive for comprehensive Git workflow
 - **Code Formatting**: Conform.nvim with language-specific formatters
 - **Tmux Integration**: Seamless navigation between Neovim and Tmux panes
@@ -83,7 +82,6 @@ A modern, feature-rich Neovim configuration built with Lua, designed for efficie
 - **[conform.nvim](https://github.com/stevearc/conform.nvim)** - Code formatting
 - **[Comment.nvim](https://github.com/numToStr/Comment.nvim)** - Smart commenting
 - **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)** - Auto-close brackets
-- **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)** - Highlight TODO comments
 
 ### Navigation & Search
 - **[telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)** - Fuzzy finder
@@ -98,12 +96,6 @@ A modern, feature-rich Neovim configuration built with Lua, designed for efficie
 - **[vim-moonfly-colors](https://github.com/bluz71/vim-moonfly-colors)** - Color theme
 - **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)** - Statusline (moonfly theme)
 - **[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)** - Markdown rendering
-
-### Debugging
-- **[nvim-dap](https://github.com/mfussenegger/nvim-dap)** - Debug Adapter Protocol
-- **[nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)** - Debug UI
-- **[nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)** - Virtual text for debugging
-- **[mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim)** - Auto-install debug adapters
 
 ### Tmux Integration
 - **[tmux.nvim](https://github.com/aserowy/tmux.nvim)** - Seamless Tmux navigation
@@ -154,10 +146,6 @@ The leader key is set to `<Space>`.
 - `<leader>hS` - Stage buffer
 - `]c` / `[c` - Navigate between changes
 
-### Debugging
-- `<leader>dt` - Toggle breakpoint
-- `<leader>dc` - Continue debugging
-
 ### Code Formatting
 - `<F3>` - Format current buffer
 - `:Format` - Format command with range support
@@ -204,8 +192,6 @@ The leader key is set to `<Space>`.
 │   │   ├── trouble.lua       # Diagnostics
 │   │   ├── tmux.lua          # Tmux integration
 │   │   └── ...              # Other plugins
-│   └── dap/                  # Debug configurations
-│       └── dap.lua           # DAP setup
 ```
 
 ## 🎨 Customization
