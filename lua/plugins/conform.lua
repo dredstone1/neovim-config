@@ -28,6 +28,7 @@ return {
 				cpp = { "clang-format" },
 				c = { "clang-format" },
 				cuda = { "clang-format" },
+				cs = { "csharpier" },
 				["*"] = { "codespell" },
 				["_"] = { "trim_whitespace" },
 			},
