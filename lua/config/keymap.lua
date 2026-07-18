@@ -24,6 +24,8 @@ end)
 -- Git command using the Map function
 Map("n", "<leader>gs", vim.cmd.Git)
 
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
+
 -- Window management
 Map("n", "<leader>cv", vim.cmd.vsplit)
 Map("n", "<leader>cb", vim.cmd.split)

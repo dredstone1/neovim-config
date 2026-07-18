@@ -24,7 +24,6 @@ return {
 				markdown = { "prettier" },
 				python = { "isort", "black" },
 				rust = { "rustfmt", lsp_format = "fallback" },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
 				cpp = { "clang-format" },
 				c = { "clang-format" },
 				cuda = { "clang-format" },
@@ -35,13 +34,6 @@ return {
 			format_on_save = false,
 			formatters = {
 				prettier = {
-					prepend_args = {
-						"--use-tabs",
-						"--tab-width",
-						"4",
-					},
-				},
-				prettierd = {
 					prepend_args = {
 						"--use-tabs",
 						"--tab-width",
@@ -67,6 +59,7 @@ return {
 						"-style={UseTab: ForIndentation,IndentWidth: 4,TabWidth: 4,ColumnLimit: 0}",
 					},
 				},
+				cs = { "csharpier" },
 			},
 		})
 
