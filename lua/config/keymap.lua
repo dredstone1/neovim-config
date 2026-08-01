@@ -21,10 +21,12 @@ Map("n", "<leader>e", function()
 	end
 end)
 
--- Git command using the Map function
+-- Git command
 Map("n", "<leader>gs", vim.cmd.Git)
 
-vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
+-- Copy shortcuts
+Map("n", "<C-c>", '"+yy')
+Map("v", "<C-c>", '"+y')
 
 -- Window management
 Map("n", "<leader>cv", vim.cmd.vsplit)
